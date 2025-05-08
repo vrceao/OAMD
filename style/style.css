@@ -1,0 +1,120 @@
+* {
+    color: white;
+    font-family: "Roboto";
+    border-radius: 4px;
+}
+
+body {
+    background: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Divs */
+
+#main {
+    width: calc(100% - 32px);
+    background: #242424;
+    border: 1px solid white;
+    padding: 4px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#main > div > *, #overlay > * {
+    margin: 4px;
+    padding: 4px;
+}
+
+#main > div {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    background: #282828;
+}
+
+/* Title */
+
+#title {
+    margin: 8px;
+    padding: 8px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Textarea */
+
+textarea {
+    width: 515px;
+    height: 128px;
+
+    background: #323232;
+    border: 1px solid #646464;
+}
+
+textarea:focus {
+    outline: 1px solid white;
+}
+
+/* Input */
+
+input {
+    background: #323232;
+    border: 1px solid #646464;
+}
+
+input:focus {
+    outline: 1px solid white;
+}
+
+/* Select */
+
+select {
+    background: #323232;
+    border: 1px solid #646464;
+}
+
+select:focus {
+    outline: 1px solid white;
+}
+
+/* Button */
+
+button {
+    background: #323232;
+    border: 1px solid #646464;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #404040;
+}
+
+button:focus {
+    outline: 1px solid white;
+}
+
+/* Other */
+
+.tip {
+    width: calc(100% - 64px);
+    position: absolute;
+    pointer-events: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.tip > p {
+    color: #606060;
+    margin: 0;
+}
+
+.number {
+    color: #b0b0b0;
+}

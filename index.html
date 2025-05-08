@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <p id="title">OAMD - osu! Automatic Map Downloader</p>
+    <div id="main">
+        <div> <!-- Introduction -->
+            <p class="number">1</p>
+            <div class="tip"><p>Introduction</p></div>
+            <p>Press Windows + R and run the code below on the machine you with to copy all of your maps names and IDs. If you installed osu! in a different directory, execute the 2nd code in your osu! directory</p>
+        </div>
+        <div> <!-- Code -->
+            <p class="number">2</p>
+            <div class="tip"><p>Code</p></div>
+            <p>Default directory:</p>
+            <button onclick="navigator.clipboard.writeText(`cmd /k cd %localappdata%/osu!/Songs && dir /b | clip && exit`)">Copy default</button>
+            <code>cmd /k cd %localappdata%/osu!/Songs && dir /b | clip && exit</code>
+            <p>|</p>
+            <p>Custom directory:</p>
+            <button onclick="navigator.clipboard.writeText(`cd Songs && dir /b | clip && exit`)">Copy custom</button>
+            <code>cd Songs && dir /b | clip && exit</code>
+        </div>
+        <div> <!-- Info -->
+            <p class="number">3</p>
+            <div class="tip"><p>Info</p></div>
+            <p>If you want to add someones maps to your maps, paste their maps in the input field and your maps in the ignore field</p>
+        </div>
+        <div> <!-- Maps input -->
+            <div class="tip"><p>Maps input</p></div>
+            <textarea id="mapsInput" placeholder="Maps input"></textarea>
+            <textarea id="ignoreInput" placeholder="Ignored maps"></textarea>
+        </div>
+        <div> <!-- Loading maps -->
+            <p class="number">4</p>
+            <div class="tip"><p>Loading maps</p></div>
+            <button onclick="loadMaps(false)">Load maps</button>
+            <button onclick="loadMaps(true);">Load example maps</button>
+            <p id="mapsText">No maps loaded</p>
+        </div>
+        <div> <!-- IDs -->
+            <p class="number">5</p>
+            <div class="tip"><p>IDs</p></div>
+            <button onclick="getIDs()">Get IDs</button>
+            <p id="IDsText">No IDs loaded</p>
+        </div>
+        <div> <!-- URLs -->
+            <p class="number">6</p>
+            <div class="tip"><p>URLs</p></div>
+            <select id="urlType">
+                <option value="osu">osu.ppy.sh (not-direct)</option>
+                <option value="nerinyan">nerinyan.moe (direct)</option>
+            </select>
+            <button onclick="generateURLs()">Generate URLs</button>
+            <p id="URLsText">No URLs generated</p>
+        </div>
+        <div> <!-- Maps output -->
+            <div class="tip"><p>Maps output</p></div>
+            <textarea id="mapsOutput" placeholder="URLs output"></textarea>
+        </div>
+        <div> <!-- Opening -->
+            <p class="number">7</p>
+            <div class="tip"><p>Opening</p></div>
+            <input id="latencyInput" placeholder="Latency (in ms)">
+            <button id="openingButton" onclick="openingProcess(false)">Start</button>
+            <p id="openingText">No processes running</p>
+        </div>
+        <div> <!-- Powershell -->
+            <p class="number">+</p>
+            <div class="tip"><p>Powershell</p></div>
+            <button onclick="generatePS()">Generate instant code</button>
+            <p>To open all URLs at once, use the button on the left to generate and copy Windows + R code</p>
+        </div>
+        <div> <!-- Powershell output -->
+            <div class="tip"><p>Powershell output</p></div>
+            <textarea id="instantOutput" placeholder="Code output"></textarea>
+        </div>
+    </div>
+    
+    <script src="src/script.js"></script>
+</body>
+</html>
